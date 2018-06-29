@@ -1,0 +1,173 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd ">
+	<modelVersion>4.0.0</modelVersion>
+	   <parent>
+    <groupId>mRapidCore</groupId>
+    <artifactId>mRapidCore</artifactId>
+    <version>0.0.2</version>
+  </parent>
+	<groupId>com.capgemini.mrapid</groupId>
+	<artifactId>metaApp</artifactId>
+	<name>mrapid++</name>
+	<description>mrapid version 2</description>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-client</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+    <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.39</version>
+	</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-csv</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.jdo</groupId>
+			<artifactId>jdo2-api</artifactId>
+			<version>2.3-eb</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.12</version>
+		 </dependency>
+    		<!-- <dependency>
+			<groupId>com.capgemini.mrapid</groupId>
+			<artifactId>audit</artifactId>
+			<version>0.0.2</version>
+		</dependency> -->
+ 	<dependency>
+			<groupId>org.apache.hive</groupId>
+			<artifactId>hive-jdbc</artifactId>
+			<version>0.11.0</version>
+		</dependency>		
+
+<!--  FOR CLOUDERA DISTRIBUTION 	
+		   <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>hive_service</artifactId>
+    <version>1.0</version>
+  </dependency>
+     <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>log4j-1.2.14</artifactId>
+    <version>1.0</version>
+  </dependency>
+     <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>ql</artifactId>
+    <version>1.0</version>
+  </dependency>
+     <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>libfb303-0.9.0</artifactId>
+    <version>1.0</version>
+  </dependency>
+     <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>libthrift-0.9.0</artifactId>
+    <version>1.0</version>
+  </dependency>
+     <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>TCLIServiceClient</artifactId>
+    <version>1.0</version>
+  </dependency>
+     <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>HiveJDBC4</artifactId>
+    <version>1.0</version>
+  </dependency>
+  
+ <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>slf4j-api-1.5.8</artifactId>
+    <version>1.0</version>
+  </dependency>
+   <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>slf4j-log4j12-1.5.8</artifactId>
+    <version>1.0</version>
+  </dependency>
+   <dependency>
+    <groupId>com.example</groupId>
+    <artifactId>hive_metastore</artifactId>
+    <version>1.0</version>
+  </dependency>
+  
+  -->
+ <!--   -->
+	</dependencies>
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+
+		  <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19</version>
+				<configuration>
+					<argLine>-Xmx1024m</argLine>
+				</configuration>
+			</plugin>
+	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+</project>
