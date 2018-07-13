@@ -117,8 +117,8 @@ public class Generator implements IGenerator {
 			//*********************************************************************************
 			
 			//Check weather schema creation is already created for country
-			//int allCntryVersion = SchemaEvolution.getSchemaCntryVersion(hadoopPropertiesMap, srcSystem, country,deploymentProperties);
-			int allCntryVersion = 0;
+			int allCntryVersion = SchemaEvolution.getSchemaCntryVersion(hadoopPropertiesMap, srcSystem, country,deploymentProperties);
+			//int allCntryVersion = 0;
 			log.info(srcSystem + ":" + country + "MetaApp allCntryVersion:"+allCntryVersion);
 			
 			if((allCntryVersion>=1) && (!isSchemaEvolution))
