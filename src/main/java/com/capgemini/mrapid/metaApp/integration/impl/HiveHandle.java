@@ -29,8 +29,8 @@ import org.apache.log4j.Logger;
 public class HiveHandle implements IIntegrate {
 	final Logger log = Logger.getLogger(HiveHandle.class);
 
-	private static String driverName = "com.cloudera.hive.jdbc4.HS2Driver"; //TODO - has to be property driven
-//	private static String driverName = "org.apache.hive.jdbc.HiveDriver"; //TODO - has to be property driven
+	//private static String driverName = "com.cloudera.hive.jdbc4.HS2Driver"; //TODO - has to be property driven
+	private static String driverName = "org.apache.hive.jdbc.HiveDriver"; //TODO - has to be property driven
 	
 	private static String hiveUser = "";
 	private static String hivePwd = "";
