@@ -28,7 +28,8 @@ public class GeneratorClient {
 		String country = args[1];
 	String configPath = args[2];
 		log.info(srcSystem+":"+country+":"+"passed parameter are correct");
-    //	System.out.print("test"); //uncomment to get encrypted hive password  
+    
+		//	System.out.print("test"); //uncomment to get encrypted hive password  
 		Generator generator = new Generator();
 		generator.generate(srcSystem, country,configPath);
 	//	PwdDecryptor pwd = new PwdDecryptor();//uncomment to get encrypted hive password  
