@@ -26,7 +26,7 @@ public class GeneratorClient {
 
 		String srcSystem = args[0];
 		String country = args[1];
-	String configPath = args[2];
+	    String configPath = args[2];
 		log.info(srcSystem+":"+country+":"+"passed parameter are correct");
     
 		//	System.out.print("test"); //uncomment to get encrypted hive password  
